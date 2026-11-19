@@ -1,0 +1,286 @@
+
+:root {
+  --primary: #176b52;
+  --primary-dark: #10513f;
+  --primary-light: #e7f4ee;
+  --background: #f4f7f6;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --text-muted: #718096;
+  --border: #e2e8e5;
+  --danger: #dc4545;
+  --shadow: 0 8px 24px rgba(25, 55, 45, 0.07);
+  --radius: 14px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+header {
+  background: linear-gradient(135deg, #124d3b, #218565);
+  color: #ffffff;
+  padding: 26px 32px;
+  box-shadow: 0 4px 16px rgba(18, 77, 59, 0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  margin: 5px 0 0;
+  color: #d7eee5;
+  font-size: 14px;
+}
+
+
+.container {
+  width: calc(100% - 40px);
+  max-width: 1180px;
+  margin: 32px auto;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.toolbar form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.toolbar input {
+  width: 260px;
+  max-width: 100%;
+}
+
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #d8e1dc;
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9aa7a0;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 107, 82, 0.12);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #34443c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: var(--primary);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s,
+              box-shadow 0.2s;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 4px 10px rgba(23, 107, 82, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+}
+
+thead th {
+  background: #edf5f0;
+  color: #315b49;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+th,
+td {
+  padding: 14px 15px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+tbody tr {
+  background: #ffffff;
+  transition: background 0.2s;
+}
+
+tbody tr:hover {
+  background: #f5faf7;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+td .btn {
+  margin: 2px 3px 2px 0;
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+.container > p {
+  padding: 12px 16px;
+  margin: 0 0 20px;
+  border: 1px solid #c9e8d7;
+  border-radius: 9px;
+  background: var(--primary-light);
+  color: #176b52;
+}
+
+footer {
+  padding: 24px 15px;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 22px 20px;
+  }
+
+  header h1 {
+    font-size: 21px;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+    margin: 18px auto;
+    padding: 18px;
+  }
+
+  .toolbar {
+    align-items: stretch;
+  }
+
+  .toolbar form {
+    align-items: stretch;
+  }
+
+  .toolbar input {
+    width: 100%;
+  }
+
+  .container {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 700px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 18px 16px;
+  }
+
+  header h1 {
+    font-size: 19px;
+  }
+
+  .container {
+    padding: 14px;
+  }
+
+  .btn {
+    padding: 9px 12px;
+  }
+}
+/* Navbar (nama & role user) */
+header { position: relative; }
+.navbar {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  font-weight: 600;
+}
